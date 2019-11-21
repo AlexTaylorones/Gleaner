@@ -25,6 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+                    适用于iOS的Http检查器.
                    DESC
 
   spec.homepage     = "https://github.com/AilsaYouCan/Gleaner"
@@ -38,8 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -90,11 +90,14 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "Gleaner/*"
+  spec.source_files  = "GleanerExample/*.swift"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
 
+  spec.ios.deployment_target = '10.0'
+  # spec.platform = ios, '10.0'
+  spec.swift_version = '5.0'
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -118,6 +121,7 @@ Pod::Spec.new do |spec|
 
   # spec.framework  = "SomeFramework"
   # spec.frameworks = "SomeFramework", "AnotherFramework"
+  spec.framework  = "UIKit","Foundation"
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"
@@ -132,14 +136,15 @@ Pod::Spec.new do |spec|
   # spec.requires_arc = true
 
   # spec.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  spec.dependency "SnapKit", "~> 4.2.0"
-  spec.dependency "RxSwift", "~> 5"
-  spec.dependency "RxDataSources"
-  spec.dependency "Moya", "~> 13.0.1"
-  spec.dependency "HandyJSON", "~> 5.0.0"
-  spec.dependency "SwiftyJSON"
-  spec.dependency "YYCache"
-  spec.dependency "Toast-Swift", "~> 5.0.0"
+
+  spec.dependency 'SnapKit', '~> 4.2.0'
+  spec.dependency 'RxSwift', '~> 5'
+  spec.dependency 'RxDataSources'
+  spec.dependency 'Moya', '~> 13.0.1'
+  spec.dependency 'HandyJSON', '~> 5.0.0'
+  spec.dependency 'SwiftyJSON'
+  spec.dependency 'YYCache'
+  spec.dependency 'Toast-Swift', '~> 5.0.0'
 
 
 end

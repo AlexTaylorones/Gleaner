@@ -24,7 +24,7 @@ target 'GleanerExample' do
     pod 'SwiftyJSON'
     
     # 网络请求专属模型-存档
-    pod 'YYCache'
+    pod 'YYCache', :modular_headers => true
     
     # Toast
     pod 'Toast-Swift', '~> 5.0.0'

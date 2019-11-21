@@ -28,6 +28,7 @@ target 'GleanerExample' do
     
     # Toast
     pod 'Toast-Swift', '~> 5.0.0'
+    
 end
 
 # 指定target的swift版本

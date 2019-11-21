@@ -30,7 +30,7 @@ public enum APIService {
     case headAPI(pathComponent: String ,param: [String: Any], extraHeaders: [String: Any])
     /// 通用OPTIONS请求方式
     case optionsAPI(pathComponent: String ,param: [String: Any], extraHeaders: [String: Any])
-    }
+}
 
 
 // MARK: - API服务

@@ -61,7 +61,7 @@ extension AINetworkManager {
     
     /// 发送通知
     private func postNotification() {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue:"HXNetworkManager"), object:nil, userInfo:[:])
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue:"AINetworkManager"), object:nil, userInfo:[:])
     }
 }
 

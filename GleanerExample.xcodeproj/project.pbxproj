@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		13105A49E90A45D0F4D2FE1E /* Pods_GleanerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC0FE309788FEA6AA38B7330 /* Pods_GleanerExample.framework */; };
+		816B32D1238789F800041920 /* MarqueeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816B32D0238789F800041920 /* MarqueeLabel.swift */; };
 		81D9254F237D2CAB0036DF14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D9254E237D2CAB0036DF14 /* AppDelegate.swift */; };
 		81D92554237D2CAB0036DF14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81D92552237D2CAB0036DF14 /* Main.storyboard */; };
 		81D92556237D2CC20036DF14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81D92555237D2CC20036DF14 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		027A123A445730CD0354BCBA /* Pods-GleanerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GleanerExample.debug.xcconfig"; path = "Target Support Files/Pods-GleanerExample/Pods-GleanerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		816B32D0238789F800041920 /* MarqueeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarqueeLabel.swift; sourceTree = "<group>"; };
 		81D9254B237D2CAB0036DF14 /* GleanerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GleanerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81D9254E237D2CAB0036DF14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81D92553237D2CAB0036DF14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		81E44A0A2383E65C00AF9D4D /* Else */ = {
 			isa = PBXGroup;
 			children = (
+				816B32D0238789F800041920 /* MarqueeLabel.swift */,
 				81E44A0B2383E65C00AF9D4D /* AIKeyChainManager.swift */,
 				81E44A0C2383E65C00AF9D4D /* AICopyLabel.swift */,
 				81E44A0D2383E65C00AF9D4D /* AINetworkTool.swift */,
@@ -391,6 +394,7 @@
 				81E44A362383E65C00AF9D4D /* AINetworkRequestController.swift in Sources */,
 				81E44A432383E65C00AF9D4D /* RequestCacheProtocol.swift in Sources */,
 				81E44A422383E65C00AF9D4D /* MoyaPlugin.swift in Sources */,
+				816B32D1238789F800041920 /* MarqueeLabel.swift in Sources */,
 				81E44A452383E65C00AF9D4D /* APIError.swift in Sources */,
 				81E44A332383E65C00AF9D4D /* AINetworkDetailViewController.swift in Sources */,
 			);

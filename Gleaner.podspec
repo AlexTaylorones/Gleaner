@@ -90,7 +90,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "GleanerExample/*.swift"
+  spec.source_files  = "GleanerExample/Gleaner/**/*.swift"
   # spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
@@ -122,6 +122,10 @@ Pod::Spec.new do |spec|
   # spec.framework  = "SomeFramework"
   # spec.frameworks = "SomeFramework", "AnotherFramework"
   spec.framework  = "UIKit","Foundation"
+
+  spec.static_framework = true
+
+
 
   # spec.library   = "iconv"
   # spec.libraries = "iconv", "xml2"

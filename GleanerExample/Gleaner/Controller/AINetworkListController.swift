@@ -55,23 +55,24 @@ extension AINetworkListController {
         }
         /// 消失按钮
         let dismissBtn = UIButton()
-        dismissBtn.setImage(UIImage.init(named: "btn_navi_back_normal"), for: .normal)
+        dismissBtn.setTitle("Dismiss", for: .normal)
         dismissBtn.addTarget(self, action: #selector(dismissSelected), for: .touchUpInside)
         topView.addSubview(dismissBtn)
         dismissBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(38)
+            make.width.equalTo(66)
+            make.height.equalTo(38)
             make.left.equalToSuperview().offset(8)
             make.bottom.equalToSuperview()
         }
         /// 清除按钮
         let clearBtn = UIButton()
-        clearBtn.setImage(UIImage.init(named: "gleaner_clear"), for: .normal)
+        clearBtn.setTitle("Clear", for: .normal)
         clearBtn.addTarget(self, action: #selector(removeAll), for: .touchUpInside)
         topView.addSubview(clearBtn)
         clearBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(26)
+            make.width.equalTo(50)
             make.right.equalToSuperview().offset(-8)
-            make.centerY.equalTo(dismissBtn)
+            make.height.centerY.equalTo(dismissBtn)
         }
         /// 搜索框
         let searchBar = UISearchBar()
@@ -101,7 +102,7 @@ extension AINetworkListController {
         }
         
         /// 接收通知
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "HXNetworkManager"), object:nil )
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "AINetworkManager"), object:nil )
         
     }
 }

@@ -94,6 +94,7 @@ extension AINetworkListCell {
         /// 状态码
         statusLabel.font = UIFont.boldSystemFont(ofSize: 16)
         statusLabel.textColor = RGBCOLOR(241, 190, 66)
+        statusLabel.textAlignment = .center
         self.addSubview(statusLabel)
         statusLabel.snp.makeConstraints { (make) in
             make.left.equalTo(12)
@@ -106,7 +107,7 @@ extension AINetworkListCell {
         urlLabel.numberOfLines = 0
         self.addSubview(urlLabel)
         urlLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(statusLabel.snp.right).offset(6)
+            make.left.equalTo(statusLabel.snp.right).offset(0)
             make.top.equalTo(12)
             make.right.equalTo(-6)
         }

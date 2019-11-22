@@ -56,7 +56,7 @@ class AIDashboardView: UIView {
         addTapGestureRecognizer()
         
         /// 接收通知
-        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "HXNetworkManager"), object:nil )
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name(rawValue: "AINetworkManager"), object:nil )
     }
     
     required init?(coder aDecoder: NSCoder) {

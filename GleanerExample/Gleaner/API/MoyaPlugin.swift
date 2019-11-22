@@ -14,7 +14,7 @@ import SwiftyJSON
 import Result
 
 /// 超时时间默认20s
-let kTimeoutInterval:Double = 20.0
+let kTimeoutInterval:Double = 3.0
 
 var currentModel = AINetworkModel()
 
@@ -44,50 +44,8 @@ public final class SingleShowState: NSObject, PluginType {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
 
-//        if case .success(let response) = result {
-//            /// token过期处理
-//            guard let dic: [String : Any] = try? JSONSerialization.jsonObject(with: response.data, options: .mutableLeaves) as? [String : Any] else {
-//                UIApplication.shared.keyWindow?.makeToast("请求失败")
-//                return
-//            }
-//
-//            if dic.keys.contains("code") {
-//                var code: Int = 0
-//                /// 登录返回code为String类型,其他接口为Number
-//                if dic["code"] is String {
-//                    code = (dic["code"] as! String).toInt()
-//                } else if dic["code"] is NSNumber {
-//                    code = (dic["code"] as! NSNumber).intValue
-//                }
-//
-//                if code == 1999 {
-//                    DispatchQueue.main.async {
-//                        UIApplication.shared.keyWindow?.makeToast("用户认证失败,请重新登录")
-//                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//                            let lastIdentity = PlatformConfig.shared.checkLastLoginStatus()
-//                            if lastIdentity == .enterprise {
-//                                // 进入企业用户非首次登录首页
-//                                UIApplication.shared.keyWindow?.rootViewController = EnterpriseLoginController()
-//                            } else if lastIdentity == .personal {
-//                                // 进入个人用户非首次登录首页
-//                                UIApplication.shared.keyWindow?.rootViewController = PersonalLoginController()
-//                            } else {
-//                                // 进入首次登录界面
-//                                UIApplication.shared.keyWindow?.rootViewController = LoginController()
-//                            }
-//                        })
-//                    }
-//                } else {
-//                    UIApplication.shared.keyWindow?.makeToast(dic["message"] as? String)
-//                }
-//            }
-//        } else {
-//            /// 统一处理网络异常
-//            if result.error != nil {
-//                HXLoading.dismiss()
-                UIApplication.shared.keyWindow?.makeToast((result.error?.errorUserInfo["NSLocalizedDescription"]) as? String)
-//            }
-//        }
+        UIApplication.shared.keyWindow?.makeToast((result.error?.errorUserInfo["NSLocalizedDescription"]) as? String)
+
     }
     
     /// 调用以在完成之前修改结果

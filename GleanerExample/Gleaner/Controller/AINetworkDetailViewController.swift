@@ -17,7 +17,7 @@ class AINetworkDetailViewController: UIViewController {
         set {
             _model = newValue
             if model.type == AINetworkType.normal {
-                titleLabel.text = "\(newValue.httpMethod) \(newValue.path)"
+                titleLabel.text = "[\(newValue.httpMethod)]\(newValue.path)  "
             } else {
                 titleLabel.text = newValue.host
             }
@@ -28,7 +28,7 @@ class AINetworkDetailViewController: UIViewController {
     }
     
     /// 标题栏
-    let titleLabel = UILabel()
+    let titleLabel = MarqueeLabel()
     
     /// UIPageViewController
     let pageVC = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
@@ -77,31 +77,35 @@ extension AINetworkDetailViewController {
         }
         /// 消失按钮
         let dismissBtn = UIButton()
-        dismissBtn.setImage(UIImage.init(named: "btn_navi_back_normal"), for: .normal)
+        dismissBtn.setTitle("Back", for: .normal)
         dismissBtn.addTarget(self, action: #selector(dismissSelected), for: .touchUpInside)
         topView.addSubview(dismissBtn)
         dismissBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(38)
+            make.height.equalTo(38)
+            make.width.equalTo(50)
             make.left.equalToSuperview().offset(8)
             make.bottom.equalToSuperview()
         }
-        /// 标题
-        titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        topView.addSubview(titleLabel)
-        titleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalToSuperview()
-            make.centerY.equalTo(dismissBtn)
-        }
+        
         /// 分享按钮
         let shareBtn = UIButton()
-        shareBtn.setImage(UIImage.init(named: "gleaner_share"), for: .normal)
+        shareBtn.setTitle("Share", for: .normal)
         shareBtn.addTarget(self, action: #selector(shareSelected), for: .touchUpInside)
         topView.addSubview(shareBtn)
         shareBtn.snp.makeConstraints { (make) in
-            make.width.height.equalTo(26)
             make.right.equalToSuperview().offset(-8)
-            make.centerY.equalTo(dismissBtn)
+            make.width.height.centerY.equalTo(dismissBtn)
+        }
+        
+        /// 标题
+        titleLabel.textColor = UIColor.white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.textAlignment = .center
+        topView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(dismissBtn.snp.right).offset(6)
+            make.right.equalTo(shareBtn.snp.left).offset(-6)
+            make.top.bottom.equalTo(dismissBtn)
         }
         
         /// 菜单栏
@@ -210,7 +214,7 @@ extension AINetworkDetailViewController {
             if UIApplication.shared.canOpenURL(URL(string: "mqq://")!) {
                 UIApplication.shared.open(URL(string: "mqq://")!, options: [:], completionHandler: nil)
             } else {
-//                self.view.makeToast("已复制, 但打开QQ失败")
+                self.view.makeToast("已复制, 但打开QQ失败")
             }
         }))
         alertVC.addAction(UIAlertAction.init(title: "微信", style: .default, handler: { (UIAlertAction) in
@@ -218,12 +222,12 @@ extension AINetworkDetailViewController {
             if UIApplication.shared.canOpenURL(URL(string: "wechat://")!) {
                 UIApplication.shared.open(URL(string: "wechat://")!, options: [:], completionHandler: nil)
             } else {
-//                self.view.makeToast("已复制, 但打开微信失败")
+                self.view.makeToast("已复制, 但打开微信失败")
             }
         }))
         alertVC.addAction(UIAlertAction.init(title: "复制", style: .default, handler: { (UIAlertAction) in
             UIPasteboard.general.string = shareText
-//            self.view.makeToast("已复制")
+            self.view.makeToast("已复制")
         }))
         alertVC.addAction(UIAlertAction.init(title: "取消", style: .cancel, handler: { (UIAlertAction) in
         }))

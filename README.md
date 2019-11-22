@@ -39,5 +39,10 @@ AppDelegate.swift加入以下代码来初始化浮窗
 #endif
 ```
 
+## Release History
+* 1.0.1 - Minor fixes.
+* 1.0.0 - Initial release.
+
 ## License
-MIT
+Copyright (c) 2019 LiShengan
+Licensed under the MIT license.

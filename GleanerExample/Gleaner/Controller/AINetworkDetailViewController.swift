@@ -17,7 +17,7 @@ class AINetworkDetailViewController: UIViewController {
         set {
             _model = newValue
             if model.type == AINetworkType.normal {
-                titleLabel.text = "[\(newValue.httpMethod)]\(newValue.path)  "
+                titleLabel.text = "\(newValue.httpMethod)\(newValue.path)      "
             } else {
                 titleLabel.text = newValue.host
             }

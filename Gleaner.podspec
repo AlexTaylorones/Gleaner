@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "Gleaner"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.1"
   spec.summary      = "适用于iOS的Http检查器."
 
   # This description is used to generate tags and improve search results.

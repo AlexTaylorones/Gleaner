@@ -1,8 +1,14 @@
-|作者|日期|
-|----|----|
-|李盛安|2019/11/22|
+<h1 align="center">
+  <br>
+  <a href="http://"><img src="https://raw.githubusercontent.com/AilsaYouCan/Gleaner/master/GleanerLogo.jpg" alt="Gleaner" width="200"></a>
+  <br>
+  Gleaner
+  <br>
+</h1>
 
-# Gleaner
+<h4 align="center">获取并保留应用程序内所有的HTTP请求和响应.</h4>
+
+## Key Features
 适用于iOS的简单应用内HTTP检查器.Gleaner获取并保留应用程序内所有的HTTP请求和响应.</br>
 使用Gleaner的应用会有浮窗显示HTTP的条数.点击浮窗会进入HTTP活动列表.
 * 包含HTTP请求和WebView</br>
@@ -32,3 +38,6 @@ AppDelegate.swift加入以下代码来初始化浮窗
     window?.addSubview(dashboardView)
 #endif
 ```
+
+## License
+MIT

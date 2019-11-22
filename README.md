@@ -24,7 +24,7 @@
 use_frameworks!
 
 target 'YourAppTargetName' do
-    pod 'pod 'Gleaner''
+    pod 'Gleaner'
 end
 ```
 2. run `pod install` 
@@ -45,4 +45,5 @@ AppDelegate.swift加入以下代码来初始化浮窗
 
 ## License
 Copyright (c) 2019 LiShengan
+
 Licensed under the MIT license.
